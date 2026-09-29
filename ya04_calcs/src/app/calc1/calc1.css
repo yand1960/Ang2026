@@ -1,0 +1,15 @@
+input {
+    width: 130px;
+    margin: 5px;
+    display: block;
+    text-align: center;
+}
+
+div.buttons button{
+    margin: 5px;
+    width: 63px;
+}
+
+.pressed {
+    background-color: pink;
+}

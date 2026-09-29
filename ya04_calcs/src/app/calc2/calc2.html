@@ -1,0 +1,13 @@
+<h1>калькулятор 2 (Банан в коробке)</h1>
+<p>Связывание страницы с методами компонента 
+    с помощью банана в коробке [()] (двухстороннего связывания)</p>
+<p>Не забыть добавить imports: [..., FormsModule]</p>
+
+<input [(ngModel)]="x"/>
+<input [(ngModel)]="y"/>
+
+<div class = "buttons">
+    <button (click)="plus()">+</button>
+    <button (click)="minus()">-</button>
+</div>
+<input [(ngModel)]="result"/>

@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 
-
 export class Person {
     firstName: string  = "";
     lastName: string = "";
@@ -13,7 +12,9 @@ export class Person {
     }
 }
 
-//@Injectable()
+// @Injectable({
+//     providedIn: "root"
+// })
 export class Repository {
     getPeople(): Person[] {
         let people: Person[] = [];

@@ -5,3 +5,32 @@ h2 {
 img {
 	width: 100px;
 }
+
+img.marker {
+	width:30px;
+}
+
+table.people {
+	border: solid black 1px;
+}
+
+
+table.people td{
+	border: solid black 1px;
+	padding: 3px;
+}
+
+table.people td:first-child {
+	width: 30px;
+	text-align: center;
+}
+
+table.people th:first-child {
+	width: 30px;
+	text-align: center;
+}
+
+tr.bluetrainer {
+	color: #000099;
+	background-color: orange;
+}

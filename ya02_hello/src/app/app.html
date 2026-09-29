@@ -2,11 +2,52 @@
 Подстановка из полей:
 <h1> {{ lala }} </h1>
 <h2> {{ bubu.toLowerCase() }} </h2>
-Динамическое поле (+pipe) :
-<p> {{ time | date:"HH:mm:ss"}}</p>
-{{ people[0].firstName}} <br />
+<p>Динамическое поле (+pipe):
+  {{ time | date:"HH:mm:ss"}}
+</p>
+Первый парень в списке: {{ people[0].firstName}} <br />
 
 Статический контент:
 <img src="images/yura1.jpg" />
 
-<h2>Вывкдите всех людей в виде таблицы</h2>
+<h2>Выведите всех людей в виде таблицы</h2>
+Новый стиль
+<table class="people">
+  <tr>
+    <th>N</th>
+    <th>Маркер</th>
+    <th>Фамилия</th>
+    <th>Имя</th>
+    <th>Роль</th>
+  </tr>
+  @for(person of people; track $index) {
+    <!-- Два варианта одного и того же -->
+    <!-- <tr class = "{{ person.job.toLowerCase() == 'trainer' ? 'bluetrainer' : ''}}"> -->
+    <tr [class] = "person.job.toLowerCase() == 'trainer' ? 'bluetrainer' : ''">
+      <td> {{ $index + 1 }} </td>
+      <td>
+        @if(person.job.toLowerCase() == "trainer") {
+          <img src="images/goat.jpg" class="marker" />
+        }
+      </td>
+      <td> {{ person.lastName }} </td>
+      <td> {{ person.firstName }} </td>
+      <td> {{ person.job }} </td>
+    </tr>
+  }
+  </table>
+  Старый стиль
+  <table>
+  <tr>
+    <th>N</th>
+    <th>Фамилия</th>
+    <th>Имя</th>
+    <th>Роль</th>
+  </tr>
+  <tr *ngFor="let person of people">
+      <td> </td>
+      <td> {{ person.lastName }} </td>
+      <td> {{ person.firstName }} </td>
+      <td> {{ person.job }} </td>
+  </tr>
+</table>

@@ -1,0 +1,15 @@
+<h1>калькулятор 1 (Банан)</h1>
+<p>Связывание страницы с методами компонента с помощью банана</p>
+
+<input #num1/>
+<input #num2/>
+<div class = "buttons">
+    <button 
+        (click) = "plus(num1.value, num2.value)" 
+        class = "{{ operation == calcOperation.plus ? 'pressed' : ''}}"
+    >+</button>
+    <button 
+    (click) = "minus(num1.value, num2.value)"
+    class = "{{ operation == calcOperation.minus ? 'pressed' : ''}}">-</button>
+</div>
+<input value = {{result}}/>

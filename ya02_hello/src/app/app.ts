@@ -3,11 +3,15 @@ import {CommonModule} from '@angular/common';
 import { Repository, Person } from './services/repository';
 
 @Component({
-  imports: [CommonModule],
-  providers: [Repository], // Без этого не работает инжекция
-  selector: 'app-root',
-  styleUrl: './app.css',
-  templateUrl: './app.html',
+	imports: [CommonModule],
+	// Без "providers: [Repository]" не работает инжекция. 
+	// Но можно заменить декоратором у сервиса,
+	// или добавлением в providers в app.config.ts.
+	// Разница - во времени жизни.
+	// providers: [Repository], 
+  	selector: 'app-root',
+  	styleUrl: './app.css',
+ 	templateUrl: './app.html',
 })
 export class App {
 	lala: string = "LALA";

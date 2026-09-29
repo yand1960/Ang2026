@@ -1,0 +1,24 @@
+<h1>Многокомпонентное SPA приложение</h1>
+<!-- <app-page1></app-page1> -->
+<table class="main">
+  <tr>
+    <td class="left-nav">
+      Ссылки классические:
+      <a href="/">Главная</a>
+      <a href="page1/">Страница 1</a>
+      <a href="page2/">Страница 2</a>
+      Ссылки SPA:
+      <a routerLink="/">Главная</a>
+      <a routerLink="page1/">Страница 1</a>
+      <a routerLink="page2/">Страница 2</a>
+    </td>
+    <td>
+      <router-outlet />
+    </td>
+  </tr>
+</table>
+
+<!-- 
+Добавьте компоненту Home, которая открывается по корневому URL 
+Пусть в ней будет написано то, что сейчас в _readme
+-->
