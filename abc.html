@@ -7,8 +7,13 @@
 			}
 		</style>
 		<script>
-			function sayGoodBye() {
-				alert("Good by!")
+			async function sayGoodBye() {
+				// alert("Good by!");
+				const response = await fetch("https://www.cbr-xml-daily.ru/daily_json.js");
+				const result = await response.json();
+				console.log(result);
+				const rate_gbp = result["Valute"]["GBP"]["Value"];
+				alert(rate_gbp);
 			}
 		</script>
 	</head>
