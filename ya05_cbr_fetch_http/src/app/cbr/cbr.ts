@@ -14,13 +14,16 @@ export class Cbr {
   private cdr: ChangeDetectorRef;
 
   constructor(cdr: ChangeDetectorRef) {
-    // В конструкторе невозможно применить async/await
+    // В конструкторе невозможно применить async/await.
+    // Впрочем, .then применять можно, но это не столько неэстетично,
+    // сколько может привести к проблемам в сложных случаях.
+    // Считается правильным, получать данные в методе ngOnInit
     this.cdr = cdr;
   }
 
   // Этот метод вызывается после конструктора и может быть асинхронным
   async ngOnInit() {
-    // К сожалению, современный Angular не гаранитрует, 
+    // К сожалению, современный Angular не гарантирует, 
     // что шаблон узнает, что поля обновились в результате асинхронного процесса
     const response = await fetch(this.url);
     const result = await response.json();

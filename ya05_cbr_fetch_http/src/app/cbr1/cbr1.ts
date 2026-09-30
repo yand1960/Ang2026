@@ -7,7 +7,7 @@ import { Component, signal, WritableSignal } from '@angular/core';
   templateUrl: './cbr1.html',
 })
 export class Cbr1 {
-  // Применение сигалов обеспечивает уведомление 
+  // Применение сигналов обеспечивает уведомление 
   // другим участникам процесса (напримрер, шаблону), 
   // что значение изменилось
   usd: WritableSignal<number> = signal<number>(0);
@@ -17,12 +17,15 @@ export class Cbr1 {
   private url = "https://www.cbr-xml-daily.ru/daily_json.js"
 
   constructor() {
-    // В конструкторе невозможно применить async/await
+    // В конструкторе невозможно применить async/await.
+    // Впрочем, .then применять можно, но это не столько неэстетично,
+    // сколько может привести к проблемам в сложных случаях.
+    // Считается правильным, получать данные в методе ngOnInit
   }
 
   // Этот метод вызывается после конструктора и может быть асинхронным
   async ngOnInit() {
-    // К сожалению, современный Angular не гаранитрует, 
+    // К сожалению, современный Angular не гарантирует, 
     // что шаблон узнает, что поля обновились в результате асинхронного процесса
     const response = await fetch(this.url);
     const result = await response.json();

@@ -9,7 +9,7 @@ import { CbrFetchRepository } from '../services/repositoryFetch';
   templateUrl: './cbr2.html',
 })
 export class Cbr2 {
-  // Применение сигалов обеспечивает уведомление 
+  // Применение сигналов обеспечивает уведомление 
   // другим участникам процесса (напримрер, шаблону), 
   // что значение изменилось
   usd: WritableSignal<number> = signal<any>(0);
@@ -18,13 +18,16 @@ export class Cbr2 {
   private repository: CbrFetchRepository;
 
   constructor(repository: CbrFetchRepository) {
-    // В конструкторе невозможно применить async/await
+    // В конструкторе невозможно применить async/await.
+    // Впрочем, .then применять можно, но это не столько неэстетично,
+    // сколько может привести к проблемам в сложных случаях.
+    // Считается правильным, получать данные в методе ngOnInit
     this.repository = repository;
   }
 
   // Этот метод вызывается после конструктора и может быть асинхронным
   async ngOnInit() {
-    // К сожалению, современный Angular не гаранитрует, 
+    // К сожалению, современный Angular не гарантирует, 
     // что шаблон узнает, что поля обновились в результате асинхронного процесса
     const result = await this.repository.getAllRates();
     this.gbp.set(result["Valute"]["GBP"]["Value"]);
