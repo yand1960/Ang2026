@@ -13,3 +13,8 @@ div.buttons button{
 .pressed {
     background-color: pink;
 }
+
+h1 {
+    color: white;
+    background-color: black;
+}
