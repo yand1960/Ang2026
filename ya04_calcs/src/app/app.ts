@@ -6,7 +6,7 @@ import { Calc3 } from './calc3/calc3';
 import { Calc4 } from './calc4/calc4';
 
 @Component({
-  imports: [RouterOutlet, Calc1, Calc2, Calc3, Calc4],
+  imports: [Calc1, Calc2, Calc3, Calc4],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',

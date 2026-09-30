@@ -1,11 +1,11 @@
 <h1>Калькулятор 4 Реактивные формы</h1>
-<p> Не забыть имопртировать ReactiveFormsModule в ts файле</p>
+<p> Не забыть импортировать ReactiveFormsModule в ts файле</p>
 
-<input [formControl]="x"/>
-<input [formControl]="y"/>
+<input type="number" [formControl]="x"/>
+<input type="number" [formControl]="y"/>
 
 <div class = "buttons">
     <button (click)="plus()"  >+</button>
     <button (click)="minus()" >-</button>
 </div>
-<input [formControl]="result"/>
+<input type="number" [formControl]="result"/>
