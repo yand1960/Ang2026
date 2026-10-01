@@ -1,0 +1,15 @@
+<h1>Множественные карточки</h1>
+@for(p of portraits(); track p) {
+    <div class="portrait">
+        <div class="info">
+            <span class="name">{{ p.name }}</span>
+            <span>{{ p.short_description }}</span>
+            <span>{{ p.description }}</span>
+        </div>
+        <div class="photo">
+            <img src="photos/{{ p.thumb }}" />
+        </div>
+    </div>
+}
+
+    

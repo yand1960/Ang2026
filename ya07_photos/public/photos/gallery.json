@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Карл Маркс",
+        "short_description": "Вождь пролетариата",
+        "description": "Хотел всем счастья, но вышло плохо",
+        "photo": "Karl Marx.jpg",
+        "thumb": "Karl Marx_small.jpg"
+    },
+
+    {
+        "id": 2,
+        "name": "Джон Леннон",
+        "short_description": "Муж Йоко Оно",
+        "description": "Был кумиром молодежи в 60-ых и 70-ых",
+        "photo": "John Lennon.jpg",
+        "thumb": "John Lennon_small.jpg"
+    },
+
+    {
+        "id": 3,
+        "name": "Наоми Кэмбелл",
+        "short_description": "Фотомодель",
+        "description": "Красавица, от которой все в отпаде",
+        "photo": "Naomi Campbell.jpg",
+        "thumb": "Naomi Campbell_small.jpg"
+    }, 
+
+    {
+        "id": 4,
+        "name": "Патриция  Хилтон",
+        "short_description": "Светская львица",
+        "description": "Над ней смеются, но сочувствуют",
+        "photo": "Paris Hilton.jpg",
+        "thumb": "Paris Hilton_small.jpg"
+    }
+
+]
