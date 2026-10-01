@@ -1,0 +1,13 @@
+<h1>Товары ({{ status }})</h1>
+Первые буквы: 
+<input #letters (input)="doFilter(letters.value)" />
+<table>
+@for(p of products; track p) {
+    <tr>
+        <td> {{ p.productID }} </td>
+        <td> {{ p.name }} </td>
+        <td> {{ p.productNumber }} </td>
+        <td> {{ p.listPrice }} </td>
+    </tr>
+}
+</table>

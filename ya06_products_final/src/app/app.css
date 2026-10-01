@@ -1,0 +1,19 @@
+table.header {
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: beige;
+    color: orange;
+}
+
+table.header td {
+    vertical-align: middle;
+    padding: 6px;
+}
+
+table.header td img {
+    width: 60px;
+}
+
+
+
