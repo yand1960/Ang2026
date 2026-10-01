@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, signal } from '@angular/core';
-import { Portrait } from '../portrait';
+import { Portrait } from '../services/portrait';
+import { PortraitRepository } from '../services/repository';
 
 
 @Component({
@@ -10,22 +10,21 @@ import { Portrait } from '../portrait';
   styleUrl: './accordion.css'
 })
 export class Accordion {
-  http: HttpClient;
-  portraits = signal<Portrait[]>([]) ;
-  private url = "photos/gallery.json"
-
-  constructor(http: HttpClient) {
-    this.http = http;
-  }
-
-  ngOnInit() {
-    this.http.get<Portrait[]>(this.url).subscribe(result => { 
-      console.log(result);
-      this.portraits.set(result);
-    });
-  }
-
+  private repository: PortraitRepository;
+    portraits = signal<Portrait[]>([]) ;
+  
+    constructor(repository: PortraitRepository) {
+      this.repository = repository;
+    }
+  
+    ngOnInit() {
+      this.repository
+          .getPortraits()
+          .subscribe(result => {
+            console.log(result);
+            this.portraits.set(result);
+          });
+    }
 }
  
 
-// Доделать первое приближение
