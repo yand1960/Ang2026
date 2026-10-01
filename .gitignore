@@ -1,1 +1,13 @@
 ya05_cbr_fetch_http/package-lock.json
+ya06_products/.editorconfig
+ya06_products/.prettierrc
+ya06_products/package-lock.json
+ya06_products/.vscode/launch.json
+ya06_products/.vscode/tasks.json
+ya07_photos/.editorconfig
+ya07_photos/.prettierrc
+ya07_photos/package-lock.json
+ya07_photos/.vscode/launch.json
+ya06_products/.vscode/launch.json
+ya06_products/.vscode/tasks.json
+ya07_photos/.vscode/launch.json
