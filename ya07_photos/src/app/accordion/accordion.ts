@@ -1,11 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { Portrait } from '../services/portrait';
 import { PortraitRepository } from '../services/repository';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 @Component({
   selector: 'app-accordion',
-  imports: [],
+  imports: [MatExpansionModule],
   templateUrl: './accordion.html',
   styleUrl: './accordion.css'
 })

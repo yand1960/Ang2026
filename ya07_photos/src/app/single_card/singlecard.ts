@@ -10,11 +10,23 @@ import { PortraitRepository } from '../services/repository';
   styleUrl: './singlecard.css'
 })
 export class Singlecard {
-  private repository: PortraitRepository;
-    portraits = signal<Portrait[]>([]) ;
+    private repository: PortraitRepository;
+    private portraits: Portrait[]= [];
+    private currentID = 0;
+    portrait = signal<Portrait>(this.portraits[0])
   
     constructor(repository: PortraitRepository) {
       this.repository = repository;
+    }
+
+    back() {
+      this.currentID -= 1;
+      this.portrait.set(this.portraits[this.currentID + 1]);
+    }
+
+    forward() {
+      this.currentID += 1;
+      this.portrait.set(this.portraits[this.currentID + 1]);
     }
   
     ngOnInit() {
@@ -22,7 +34,8 @@ export class Singlecard {
           .getPortraits()
           .subscribe(result => {
             console.log(result);
-            this.portraits.set(result);
+            this.portraits = result;
+            this.portrait.set(this.portraits[this.currentID]);
           });
     }
 }

@@ -1,15 +1,20 @@
-<h1>Переделать на одиночные карточки</h1>
-@for(p of portraits(); track p) {
-    <div class="portrait">
-        <div class="info">
-            <span class="name">{{ p.name }}</span>
-            <span>{{ p.short_description }}</span>
-            <span>{{ p.description }}</span>
-        </div>
-        <div class="photo">
-            <img src="photos/{{ p.thumb }}" />
+<h1>Одиночные карточки</h1>
+
+@let p = portrait();
+<div class="portrait">
+    <div class="info">
+        <span class="name">{{ p.name }}</span>
+        <span>{{ p.short_description }}</span>
+        <span>{{ p.description }}</span>
+    </div>
+    <div class="photo">
+        <img src="photos/{{ p.photo }}" />
+        <div class="buttons">
+            <button (click)="back()">Назад</button>
+            <button (click)="forward()">Вперед</button>
         </div>
     </div>
-}
+</div>
+
 
     

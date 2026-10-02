@@ -1,15 +1,21 @@
 <h1>Переделать на аккордеон</h1>
+<mat-accordion>
 @for(p of portraits(); track p) {
     <div class="portrait">
-        <div class="info">
-            <span class="name">{{ p.name }}</span>
-            <span>{{ p.short_description }}</span>
-            <span>{{ p.description }}</span>
-        </div>
-        <div class="photo">
-            <img src="photos/{{ p.thumb }}" />
-        </div>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <span class="name">{{ p.name }}</span>
+            </mat-expansion-panel-header>
+            <div class="info">
+                <span>{{ p.short_description }}</span>
+                <span>{{ p.description }}</span>
+            </div>
+            <div class="photo">
+                <img src="photos/{{ p.thumb }}" />
+            </div>
+        </mat-expansion-panel>
     </div>
 }
+</mat-accordion>
 
     
