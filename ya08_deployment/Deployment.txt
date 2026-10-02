@@ -1,0 +1,26 @@
+1. В корне проекта запустить ng build
+2. Образуется папка dist/../browser
+3. Эту папку перенести на производственный сервер (с переименеованием)
+4. В файле index.html переписать <base href="/<имя папки/">
+5. Если в приложении использован routing, то еще шаги:
+6. Убедитьcя, что производственный сервер способен к rewrite адресов. На IIS для этого нужно установить IIS Rewrite Module
+7. Определить правила, которая любой "виртуальный" адрес Ангуляра переводит на index.html. На IIS для этого надо добавить такой web.config:
+------------------------------------------------------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <system.webServer>
+    <rewrite>
+      <rules>
+        <rule name="Angular Routes" stopProcessing="true">
+          <match url=".*" />
+          <conditions logicalGrouping="MatchAll">
+            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+            <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+          </conditions>
+          <action type="Rewrite" url="index.html" />
+        </rule>
+      </rules>
+    </rewrite>
+  </system.webServer>
+</configuration>
+------------------------------------------------------------------------------
